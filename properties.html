@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Browse curated homes for sale and rent with Haven Estate."
+    />
+    <meta name="theme-color" content="#17252e" />
+    <title>Properties for Sale & Rent | Haven Estate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="properties">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <a class="brand" href="index.html" aria-label="Haven Estate home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span class="brand-name">HAVEN <span>ESTATE</span></span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+        <a href="properties.html" aria-current="page">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="header-cta" href="mailto:hello@havenestate.co.uk?subject=Property%20valuation%20request">Book a valuation <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main" class="properties-page-shell">
+      <section class="properties-hero" aria-labelledby="properties-heading">
+        <div class="properties-hero__content">
+          <p class="eyebrow eyebrow-light"><span></span> Find your next address</p>
+          <h1 id="properties-heading">Properties for sale<br />& rent.</h1>
+          <p class="properties-hero__copy">
+            Curated homes selected for how you want to live — with clear guidance, thoughtful detail,
+            and a search experience designed around what matters most.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#property-search-panel">Start your search <span aria-hidden="true">↗</span></a>
+            <a class="text-link light-link" href="index.html#services">Meet our advisors <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="properties-hero__stats" aria-label="Property market overview">
+          <div>
+            <strong>320+</strong>
+            <span>homes currently available</span>
+          </div>
+          <div>
+            <strong>18</strong>
+            <span>neighbourhoods across the city</span>
+          </div>
+          <div>
+            <strong>4.9/5</strong>
+            <span>client satisfaction rating</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-panel" id="property-search-panel" aria-label="Property search filters">
+        <div class="search-panel__header">
+          <div>
+            <p class="eyebrow">Search the market</p>
+            <h2>Refine your search</h2>
+          </div>
+          <div class="status-toggle" aria-label="Sale or rent selection" role="tablist">
+            <button type="button" class="is-active" data-status="sale" aria-pressed="true">Sale</button>
+            <button type="button" data-status="rent" aria-pressed="false">Rent</button>
+          </div>
+        </div>
+
+        <form class="property-discovery-form" id="property-search-form">
+          <label class="field field-location">
+            <span>Location</span>
+            <input id="filter-location" name="location" type="search" placeholder="Town, area or postcode" autocomplete="off" />
+          </label>
+
+          <label class="field">
+            <span>Property type</span>
+            <select id="filter-type" name="propertyType">
+              <option value="">Any type</option>
+              <option value="House">House</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Townhouse">Townhouse</option>
+              <option value="Penthouse">Penthouse</option>
+              <option value="Villa">Villa</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span id="filter-price-label">Max price</span>
+            <select id="filter-price" name="price">
+              <option value="">No maximum</option>
+              <option value="500000">£500,000</option>
+              <option value="750000">£750,000</option>
+              <option value="1000000">£1,000,000</option>
+              <option value="1500000">£1,500,000</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Bedrooms</span>
+            <select id="filter-bedrooms" name="bedrooms">
+              <option value="">Any</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Bathrooms</span>
+            <select id="filter-bathrooms" name="bathrooms">
+              <option value="">Any</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+            </select>
+          </label>
+
+          <div class="search-actions">
+            <button class="search-button" type="submit">Search<br />properties <span aria-hidden="true">↗</span></button>
+            <button class="reset-link" type="button" id="clear-search-button">Reset filters</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results-toolbar" aria-label="Property results controls">
+        <div>
+          <p class="eyebrow">Your matches</p>
+          <h2 id="results-count">0 properties found</h2>
+        </div>
+
+        <label class="sort-field" for="sort-select">
+          <span>Sort by</span>
+          <select id="sort-select" name="sort">
+            <option value="newest">Newest</option>
+            <option value="price-low">Lowest price</option>
+            <option value="price-high">Highest price</option>
+          </select>
+        </label>
+      </section>
+
+      <section aria-live="polite" aria-atomic="true">
+        <div id="properties-grid" class="property-listing-grid"></div>
+      </section>
+
+      <div class="empty-state" id="empty-state" hidden>
+        <p>No properties match your search just yet.</p>
+        <button type="button" class="text-link" id="empty-state-reset">Clear filters and browse all homes <span aria-hidden="true">↗</span></button>
+      </div>
+
+      <div class="load-more-wrap">
+        <button class="button button-dark" type="button" id="load-more-button">Load more properties <span aria-hidden="true">↗</span></button>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand brand-footer" href="index.html" aria-label="Haven Estate home">
+            <span class="brand-mark" aria-hidden="true">H</span>
+            <span class="brand-name">HAVEN <span>ESTATE</span></span>
+          </a>
+          <p>A more considered way<br />to find your place.</p>
+        </div>
+        <div class="footer-group">
+          <h2>Explore</h2>
+          <a href="properties.html">Properties for sale</a>
+          <a href="properties.html">Properties to rent</a>
+          <a href="services.html">Our services</a>
+          <a href="about.html">About Haven</a>
+        </div>
+        <div class="footer-group">
+          <h2>Say hello</h2>
+          <a href="mailto:hello@havenestate.co.uk">hello@havenestate.co.uk</a>
+          <a href="tel:+442079460280">020 7946 0280</a>
+          <p>12 St James’s Square<br />London, SW1Y 4LB</p>
+        </div>
+        <div class="footer-group footer-note">
+          <h2>Good to know</h2>
+          <a href="contact.html">Contact us</a>
+          <p>Here for the way<br />you want to live.</p>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Haven Estate</span><span>Thoughtful property. Considered living.</span><a href="#top">Back to top ↑</a></div>
+    </footer>
+  </body>
+</html>
